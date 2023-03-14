@@ -1,23 +1,60 @@
+import useLocalStorage from "../hooks/useLocalStorage";
 import ToggledElement from "./InputAndButton/ToggledElement";
 import TaskDisplay from "./DisplayTasks/TaskDisplay";
-const tempObj = {
-  completed: ["Buy new sweatshirt", "Begin promotional phase"],
-  pending: [
-    "Read an article",
-    "Try not to sleep",
-    "Watch 'Sherlock'",
-    "Begin QA for the product",
-    "Go for a walk",
-  ],
+import toast from "react-hot-toast";
+type ObjStructure = {
+  date: number;
+  completed: string[];
+  pending: string[];
+};
+let initialObj: ObjStructure = {
+  date: new Date().getDate(),
+  completed: [],
+  pending: [],
 };
 function TaskList() {
-  function newTask() {}
+  const [obj, setObj] = useLocalStorage("todo", initialObj);
+  const newTask = (value: string): void => {
+    setObj({ ...obj, pending: [...obj.pending, value] });
+    toast.success("New task added successfully!");
+  };
+
+  const addToCompleted = (value: string): void => {
+    let newPendingArr = obj.pending.filter(pendingVal => {
+      return pendingVal !== value;
+    });
+    setObj({
+      ...obj,
+      pending: newPendingArr,
+      completed: [...obj.completed, value],
+    });
+    toast.success("Hurray, Task Completed !");
+  };
+
+  const deleteTheTask = (value: string): void => {
+    let newCompletedArr = obj.completed.filter(completedVal => {
+      return completedVal !== value;
+    });
+    setObj({
+      ...obj,
+      completed: newCompletedArr,
+    });
+    toast.error("Task has been Deleted !");
+  };
   return (
     <>
       <div className="h-[100%] overflow-auto ">
-        <TaskDisplay list={tempObj.completed} type="completed" />
-        <TaskDisplay list={tempObj.pending} type="pending" />
-        {tempObj.pending.length <= 0 && tempObj.completed.length <= 0 && (
+        <TaskDisplay
+          actionOnTask={deleteTheTask}
+          list={obj.completed}
+          type="completed"
+        />
+        <TaskDisplay
+          actionOnTask={addToCompleted}
+          list={obj.pending}
+          type="pending"
+        />
+        {obj.pending.length <= 0 && obj.completed.length <= 0 && (
           <div className="flex flex-col items-center justify-center h-full">
             <div className="text-xl text-center">Nothing Left in the List!</div>
             <img

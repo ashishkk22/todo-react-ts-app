@@ -1,8 +1,13 @@
+import React from "react";
 type TaskDisplayProps = {
+  actionOnTask: (value: string) => void;
   list: string[];
   type: "pending" | "completed";
 };
-const TaskDisplay = ({ list, type }: TaskDisplayProps) => {
+const TaskDisplay = ({ actionOnTask, list, type }: TaskDisplayProps) => {
+  const btnClickHandler = (value: string) => {
+    actionOnTask(value);
+  };
   return (
     <>
       {list?.map((value, idx) => {
@@ -18,7 +23,12 @@ const TaskDisplay = ({ list, type }: TaskDisplayProps) => {
             >
               {value}
             </div>
-            <button className="w-9">
+            <button
+              className="w-9"
+              onClick={() => {
+                btnClickHandler(value);
+              }}
+            >
               <img src={`/assets/task-${type}.png`} alt="completed" />
             </button>
           </div>

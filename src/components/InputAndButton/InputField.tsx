@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
 type InputFieldProps = {
   optionHandler: () => void;
@@ -15,6 +16,7 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
     }
     if (e.key === "Enter") {
       if (e.target.value === "") {
+        toast.error("Task can't be empty !");
         return;
       }
       addNewTask(e.target.value);
