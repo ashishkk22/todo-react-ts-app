@@ -2,6 +2,7 @@ type TaskDisplayProps = {
   list: string[];
   type: "pending" | "completed";
 };
+
 const TaskDisplay = ({ list, type }: TaskDisplayProps) => {
   return (
     <>

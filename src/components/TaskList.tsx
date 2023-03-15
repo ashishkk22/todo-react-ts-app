@@ -1,5 +1,6 @@
 import ToggledElement from "./InputAndButton/ToggledElement";
 import TaskDisplay from "./DisplayTasks/TaskDisplay";
+
 const tempObj = {
   completed: ["Buy new sweatshirt", "Begin promotional phase"],
   pending: [
@@ -10,8 +11,10 @@ const tempObj = {
     "Go for a walk",
   ],
 };
+
 function TaskList() {
   function newTask() {}
+
   return (
     <>
       <div className="h-[100%] overflow-auto ">
@@ -28,9 +31,9 @@ function TaskList() {
           </div>
         )}
       </div>
-
       <ToggledElement addNewTask={newTask} />
     </>
   );
 }
+
 export default TaskList;

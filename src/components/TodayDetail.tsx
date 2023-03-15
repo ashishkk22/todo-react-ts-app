@@ -1,4 +1,5 @@
 import React from "react";
+
 const days = [
   "SUNDAY",
   "MONDAY",
@@ -22,6 +23,7 @@ const monthArr = [
   "NOV",
   "DEC",
 ];
+
 class TodayDetail extends React.Component {
   dateReturn = () => {
     const currentDate = new Date();
@@ -36,8 +38,10 @@ class TodayDetail extends React.Component {
       day,
     };
   };
+
   render(): React.ReactNode {
     const { date, month, year, day } = this.dateReturn();
+
     return (
       <div className="flex justify-between my-4 mt-12 items-center">
         <div className="flex">
@@ -52,4 +56,5 @@ class TodayDetail extends React.Component {
     );
   }
 }
+
 export default TodayDetail;
