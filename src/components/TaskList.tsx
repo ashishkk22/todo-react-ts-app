@@ -2,18 +2,22 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import ToggledElement from "./InputAndButton/ToggledElement";
 import TaskDisplay from "./DisplayTasks/TaskDisplay";
 import toast from "react-hot-toast";
+
 type ObjStructure = {
   date: number;
   completed: string[];
   pending: string[];
 };
+
 let initialObj: ObjStructure = {
   date: new Date().getDate(),
   completed: [],
   pending: [],
 };
+
 function TaskList() {
   const [obj, setObj] = useLocalStorage("todo", initialObj);
+
   const newTask = (value: string): void => {
     setObj({ ...obj, pending: [...obj.pending, value] });
     toast.success("New task added successfully!");
@@ -41,6 +45,7 @@ function TaskList() {
     });
     toast.error("Task has been Deleted !");
   };
+
   return (
     <>
       <div className="h-[100%] overflow-auto ">
@@ -65,9 +70,9 @@ function TaskList() {
           </div>
         )}
       </div>
-
       <ToggledElement addNewTask={newTask} />
     </>
   );
 }
+
 export default TaskList;

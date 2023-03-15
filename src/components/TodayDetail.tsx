@@ -1,4 +1,5 @@
 import React from "react";
+
 const days = [
   "SUNDAY",
   "MONDAY",
@@ -29,6 +30,7 @@ class TodayDetail extends React.Component {
     const month = monthArr[currentDate.getMonth()];
     const year = currentDate.getFullYear();
     const day = days[currentDate.getDay()];
+
     return {
       date,
       month,
@@ -36,6 +38,7 @@ class TodayDetail extends React.Component {
       day,
     };
   };
+
   render(): React.ReactNode {
     const { date, month, year, day } = this.dateReturn();
     return (
@@ -52,4 +55,5 @@ class TodayDetail extends React.Component {
     );
   }
 }
+
 export default TodayDetail;

@@ -5,6 +5,7 @@ type InputFieldProps = {
   optionHandler: () => void;
   addNewTask: (value: string) => void;
 };
+
 function InputField({ optionHandler, addNewTask }: InputFieldProps) {
   const inputHandler = (
     e: React.KeyboardEvent<HTMLInputElement> & {
@@ -14,6 +15,7 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
     if (e.key === "Escape") {
       optionHandler();
     }
+
     if (e.key === "Enter") {
       if (e.target.value === "") {
         toast.error("Task can't be empty !");
@@ -23,6 +25,7 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
       e.target.value = "";
     }
   };
+
   return (
     <input
       className="w-full my-4 text-textLight bg-white focus:outline-0"
@@ -31,4 +34,5 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
     />
   );
 }
+
 export default InputField;

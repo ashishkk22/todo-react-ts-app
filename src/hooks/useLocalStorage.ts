@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
   const [value, _setValue] = useState(() => {
     const jsonValue = localStorage.getItem(key);
+
     if (jsonValue !== null) {
       const dataFromLocal = JSON.parse(jsonValue);
       const currentDate = new Date().getDate();
@@ -14,17 +16,20 @@ function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
         return dataFromLocal as T;
       }
     }
+
     if (initialValue instanceof Function) {
       return initialValue();
     } else {
       return initialValue;
     }
   });
+
   const setValue = (newState: T | (() => T)) => {
     const value = newState instanceof Function ? newState() : newState;
     _setValue(value);
     localStorage.setItem(key, JSON.stringify(value));
   };
+
   return [value, setValue] as const;
 }
 

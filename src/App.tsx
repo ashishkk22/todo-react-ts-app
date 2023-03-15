@@ -1,5 +1,6 @@
 import TodoContainer from "./components/TodoContainer";
 import { Toaster } from "react-hot-toast";
+
 function App() {
   return (
     <>

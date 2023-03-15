@@ -1,13 +1,16 @@
 import React from "react";
+
 type TaskDisplayProps = {
   actionOnTask: (value: string) => void;
   list: string[];
   type: "pending" | "completed";
 };
+
 const TaskDisplay = ({ actionOnTask, list, type }: TaskDisplayProps) => {
   const btnClickHandler = (value: string) => {
     actionOnTask(value);
   };
+
   return (
     <>
       {list?.map((value, idx) => {

@@ -1,6 +1,7 @@
 type ButtonProps = {
   optionHandler: () => void;
 };
+
 function Button({ optionHandler }: ButtonProps) {
   return (
     <button
@@ -11,4 +12,5 @@ function Button({ optionHandler }: ButtonProps) {
     </button>
   );
 }
+
 export default Button;

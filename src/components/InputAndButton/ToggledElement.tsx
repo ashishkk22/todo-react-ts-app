@@ -8,9 +8,11 @@ type ToggledElementProps = {
 
 const ToggledElement = ({ addNewTask }: ToggledElementProps) => {
   const [inputActive, setInputActive] = useState(false);
+
   const inputShowHandler = () => {
     setInputActive(state => (state ? false : true));
   };
+
   return (
     <>
       {inputActive ? (
