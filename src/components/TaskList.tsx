@@ -18,11 +18,13 @@ let initialObj: ObjStructure = {
 function TaskList() {
   const [obj, setObj] = useLocalStorage("todo", initialObj);
 
+  //adding new task in the pending key of obj
   const newTask = (value: string): void => {
     setObj({ ...obj, pending: [...obj.pending, value] });
     toast.success("New task added successfully!");
   };
 
+  //moving task in the completed key of and removing from pending in obj
   const addToCompleted = (value: string): void => {
     let newPendingArr = obj.pending.filter(pendingVal => {
       return pendingVal !== value;
@@ -35,6 +37,7 @@ function TaskList() {
     toast.success("Hurray, Task Completed !");
   };
 
+  //deleting the task in the completed key of obj
   const deleteTheTask = (value: string): void => {
     let newCompletedArr = obj.completed.filter(completedVal => {
       return completedVal !== value;
