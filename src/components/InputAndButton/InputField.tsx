@@ -11,10 +11,12 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
       target: HTMLInputElement;
     }
   ) => {
+    //on escape toggling the btn to input field or vice versa
     if (e.key === "Escape") {
       optionHandler();
     }
 
+    //on key Enter calling the newTask fn of parent component
     if (e.key === "Enter") {
       if (e.target.value === "") {
         return;
@@ -29,6 +31,7 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
       className="w-full my-4 text-textLight bg-white focus:outline-0"
       placeholder="Enter the Task !"
       onKeyDown={inputHandler}
+      autoFocus
     />
   );
 }

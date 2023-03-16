@@ -25,6 +25,7 @@ const monthArr = [
 ];
 
 class TodayDetail extends React.Component {
+  //getting today's detail and returning in obj
   dateReturn = () => {
     const currentDate = new Date();
     const date = currentDate.getDate();
