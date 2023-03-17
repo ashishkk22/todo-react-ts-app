@@ -9,7 +9,7 @@ type ObjStructure = {
   pending: string[];
 };
 
-let initialObj: ObjStructure = {
+const initialObj: ObjStructure = {
   date: new Date().getDate(),
   completed: [],
   pending: [],
@@ -24,9 +24,9 @@ function TaskList() {
     toast.success("New task added successfully!");
   };
 
-  //moving task in the completed key of and removing from pending in obj
+  //moving task in the completed and removing from pending in obj
   const addToCompleted = (value: string): void => {
-    let newPendingArr = obj.pending.filter(pendingVal => {
+    const newPendingArr = obj.pending.filter(pendingVal => {
       return pendingVal !== value;
     });
     setObj({
@@ -39,7 +39,7 @@ function TaskList() {
 
   //deleting the task in the completed key of obj
   const deleteTheTask = (value: string): void => {
-    let newCompletedArr = obj.completed.filter(completedVal => {
+    const newCompletedArr = obj.completed.filter(completedVal => {
       return completedVal !== value;
     });
     setObj({
@@ -62,7 +62,7 @@ function TaskList() {
           list={obj.pending}
           type="pending"
         />
-        {obj.pending.length <= 0 && obj.completed.length <= 0 && (
+        {obj?.pending?.length <= 0 && obj?.completed?.length <= 0 && (
           <div className="flex flex-col items-center justify-center h-full">
             <div className="text-xl text-center">Nothing Left in the List!</div>
             <img
