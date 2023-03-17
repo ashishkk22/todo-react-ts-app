@@ -13,7 +13,7 @@ const TaskDisplay = ({ list, type }: TaskDisplayProps) => {
             key={value + idx}
           >
             <div
-              className={`break-words text-justify flex-1 mr-2 max-w-[80%] text-lg ${
+              className={`break-words text-justify flex-1 mx-2 max-w-[80%] text-lg ${
                 type === "completed" ? "text-textComplete" : ""
               }`}
             >
