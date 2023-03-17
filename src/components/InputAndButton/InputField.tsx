@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type InputFieldProps = {
   optionHandler: () => void;
@@ -6,33 +6,37 @@ type InputFieldProps = {
 };
 
 function InputField({ optionHandler, addNewTask }: InputFieldProps) {
-  const inputHandler = (
-    e: React.KeyboardEvent<HTMLInputElement> & {
-      target: HTMLInputElement;
-    }
-  ) => {
-    //on escape toggling the btn to input field or vice versa
-    if (e.key === "Escape") {
-      optionHandler();
-    }
+  const [value, setValue] = useState("");
 
-    //on key Enter calling the newTask fn of parent component
-    if (e.key === "Enter") {
-      if (e.target.value === "") {
-        return;
-      }
-      addNewTask(e.target.value);
-      e.target.value = "";
-    }
+  //on submit adding task and clearing the value of inputField
+  const formSubmitHandler = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addNewTask(value);
+    setValue("");
   };
 
+  //on escape keyPress toggling the input and btn
+  useEffect(() => {
+    function keyPressHandler(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        optionHandler();
+      }
+    }
+    document.addEventListener("keydown", keyPressHandler);
+
+    return () => document.removeEventListener("keydown", keyPressHandler);
+  }, [optionHandler]);
+
   return (
-    <input
-      className="w-full my-4 text-textLight bg-white focus:outline-0"
-      placeholder="Enter the Task !"
-      onKeyDown={inputHandler}
-      autoFocus
-    />
+    <form onSubmit={formSubmitHandler}>
+      <input
+        className="w-full my-4 text-textLight bg-white focus:outline-0"
+        placeholder="Enter the Task !"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        autoFocus
+      />
+    </form>
   );
 }
 

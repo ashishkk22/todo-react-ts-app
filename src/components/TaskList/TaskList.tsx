@@ -1,5 +1,5 @@
-import ToggledElement from "./InputAndButton/ToggledElement";
-import TaskDisplay from "./DisplayTasks/TaskDisplay";
+import ToggledElement from "../InputAndButton/ToggledElement";
+import TaskDisplay from "../DisplayTasks/TaskDisplay";
 
 const tempObj = {
   completed: ["Buy new sweatshirt", "Begin promotional phase"],
