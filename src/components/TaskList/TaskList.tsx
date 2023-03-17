@@ -1,6 +1,6 @@
-import useLocalStorage from "../hooks/useLocalStorage";
-import ToggledElement from "./InputAndButton/ToggledElement";
-import TaskDisplay from "./DisplayTasks/TaskDisplay";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import ToggledElement from "../InputAndButton/ToggledElement";
+import TaskDisplay from "../DisplayTasks/TaskDisplay";
 import toast from "react-hot-toast";
 
 type ObjStructure = {
