@@ -4,13 +4,13 @@ import TaskDisplay from "../DisplayTasks/TaskDisplay";
 import toast from "react-hot-toast";
 
 type ObjStructure = {
-  date: number;
+  date: string;
   completed: string[];
   pending: string[];
 };
 
 const initialObj: ObjStructure = {
-  date: new Date().getDate(),
+  date: new Date().toLocaleDateString(),
   completed: [],
   pending: [],
 };

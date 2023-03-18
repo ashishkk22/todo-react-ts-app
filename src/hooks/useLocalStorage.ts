@@ -6,7 +6,7 @@ function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
 
     if (jsonValue !== null) {
       const dataFromLocal = JSON.parse(jsonValue);
-      const currentDate = new Date().getDate();
+      const currentDate = new Date().toLocaleDateString();
 
       //if date is diff then don't send data (to set expiry) else return data
       if (dataFromLocal.hasOwnProperty("date")) {
