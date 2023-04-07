@@ -1,5 +1,5 @@
 import React from "react";
-import { TaskDisplayProps } from "./TaskDisplayProps.types";
+import { TaskDisplayProps } from "./TaskDisplay.types";
 
 const TaskDisplay = ({ list, type }: TaskDisplayProps) => {
   return (

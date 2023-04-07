@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
-import InputField from "./InputField";
-import Button from "./Button";
+import InputField from "./InputField/InputField";
+import Button from "./Button/Button";
 
 type ToggledElementProps = {
   addNewTask: (value: string) => void;

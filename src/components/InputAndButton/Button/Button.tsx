@@ -1,6 +1,4 @@
-type ButtonProps = {
-  optionHandler: () => void;
-};
+import { ButtonProps } from "./Button.types";
 
 function Button({ optionHandler }: ButtonProps) {
   return (
