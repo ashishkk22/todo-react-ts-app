@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskDisplay TaskDisplay renders correctly 1`] = `
+<ul>
+  <li
+    className="flex justify-between items-center mt-8"
+  >
+    <div
+      className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+    >
+      Begin promotional phase
+    </div>
+    <button
+      className="w-9"
+    >
+      <img
+        alt="completed"
+        src="/assets/task-pending.png"
+      />
+    </button>
+  </li>
+  <li
+    className="flex justify-between items-center mt-8"
+  >
+    <div
+      className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+    >
+      Read an article
+    </div>
+    <button
+      className="w-9"
+    >
+      <img
+        alt="completed"
+        src="/assets/task-pending.png"
+      />
+    </button>
+  </li>
+  <li
+    className="flex justify-between items-center mt-8"
+  >
+    <div
+      className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+    >
+      Begin QA for the product
+    </div>
+    <button
+      className="w-9"
+    >
+      <img
+        alt="completed"
+        src="/assets/task-pending.png"
+      />
+    </button>
+  </li>
+</ul>
+`;
