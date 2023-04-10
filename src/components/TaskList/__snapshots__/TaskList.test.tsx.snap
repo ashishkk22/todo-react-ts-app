@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskList component TaskList renders correctly 1`] = `
+Array [
+  <div
+    className="h-[100%] overflow-auto "
+  >
+    <ul>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg text-textComplete"
+        >
+          Buy new sweatshirt
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-completed.png"
+          />
+        </button>
+      </li>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg text-textComplete"
+        >
+          Begin promotional phase
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-completed.png"
+          />
+        </button>
+      </li>
+    </ul>
+    <ul>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+        >
+          Read an article
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-pending.png"
+          />
+        </button>
+      </li>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+        >
+          Try not to sleep
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-pending.png"
+          />
+        </button>
+      </li>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+        >
+          Watch 'Sherlock'
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-pending.png"
+          />
+        </button>
+      </li>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+        >
+          Begin QA for the product
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-pending.png"
+          />
+        </button>
+      </li>
+      <li
+        className="flex justify-between items-center mt-8"
+      >
+        <div
+          className="break-words text-justify flex-1 mx-2 max-w-[80%] text-lg "
+        >
+          Go for a walk
+        </div>
+        <button
+          className="w-9"
+        >
+          <img
+            alt="completed"
+            src="/assets/task-pending.png"
+          />
+        </button>
+      </li>
+    </ul>
+  </div>,
+  <button
+    className="absolute bottom-[calc(11vh-30px)] left-[calc(50vw-38px)] rounded-full bg-lightGreen p-7 opacity-95"
+    onClick={[Function]}
+  >
+    <img
+      alt="plus"
+      className="opacity-40 w-6"
+      src="/assets/plus.png"
+    />
+  </button>,
+]
+`;

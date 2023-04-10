@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Button renders correctly 1`] = `
+<button
+  className="absolute bottom-[calc(11vh-30px)] left-[calc(50vw-38px)] rounded-full bg-lightGreen p-7 opacity-95"
+  onClick={[Function]}
+>
+  <img
+    alt="plus"
+    className="opacity-40 w-6"
+    src="/assets/plus.png"
+  />
+</button>
+`;

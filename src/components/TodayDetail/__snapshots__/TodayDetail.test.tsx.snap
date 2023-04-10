@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodayDetail component TodaysDetail renders correctly 1`] = `
+<div
+  className="flex justify-between my-4 mt-12 items-center"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="text-5xl mr-3 font-medium"
+    >
+      10
+    </div>
+    <div
+      className="flex flex-col"
+    >
+      <div
+        className="font-medium"
+      >
+        APRIL
+      </div>
+      2023
+    </div>
+  </div>
+  <div
+    className="font-medium"
+  >
+    MONDAY
+  </div>
+</div>
+`;
