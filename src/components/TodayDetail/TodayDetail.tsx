@@ -1,6 +1,6 @@
 import React from "react";
 
-const days = [
+export const days = [
   "SUNDAY",
   "MONDAY",
   "TUESDAY",
@@ -9,7 +9,7 @@ const days = [
   "FRIDAY",
   "SATURDAY",
 ];
-const monthArr = [
+export const monthArr = [
   "JAN",
   "FEB",
   "MARCH",
