@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-type InputFieldProps = {
-  optionHandler: () => void;
-  addNewTask: (value: string) => void;
-};
+import { InputFieldProps } from "./InputField.types";
 
 function InputField({ optionHandler, addNewTask }: InputFieldProps) {
   const [value, setValue] = useState("");
