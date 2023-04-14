@@ -14,11 +14,12 @@ function InputField({ optionHandler, addNewTask }: InputFieldProps) {
     e.preventDefault();
 
     //if empty throw error else add the task and empty the value
-    if (value === "") {
+    const trimmedVal = value.trim();
+    if (trimmedVal === "") {
       toast.error("Task can't be empty !");
       return;
     }
-    addNewTask(value);
+    addNewTask(trimmedVal);
     setValue("");
   };
 
