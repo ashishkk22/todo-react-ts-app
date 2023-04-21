@@ -2,7 +2,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import ToggledElement from "../InputAndButton/ToggledElement";
 import TaskDisplay from "../DisplayTasks/TaskDisplay";
 import toast from "react-hot-toast";
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 
 type ObjStructure = {
   date: string;
