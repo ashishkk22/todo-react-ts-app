@@ -2,6 +2,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import ToggledElement from "../InputAndButton/ToggledElement";
 import TaskDisplay from "../DisplayTasks/TaskDisplay";
 import toast from "react-hot-toast";
+import { useCallback, useRef } from "react";
 
 type ObjStructure = {
   date: string;
@@ -18,10 +19,16 @@ const initialObj: ObjStructure = {
 function TaskList() {
   const [obj, setObj] = useLocalStorage("todo", initialObj);
 
-  //adding new task in the pending key of obj
+  const ulElement = useRef<HTMLUListElement>(null);
+  //adding new task in the pending key of obj and scroll to the last element
   const newTask = (value: string): void => {
     setObj({ ...obj, pending: [...obj.pending, value] });
     toast.success("New task added successfully!");
+    setTimeout(() => {
+      ulElement.current?.lastElementChild?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
   };
 
   //moving task in the completed and removing from pending in obj
@@ -61,6 +68,7 @@ function TaskList() {
           actionOnTask={addToCompleted}
           list={obj.pending}
           type="pending"
+          ref={ulElement}
         />
         {obj?.pending?.length <= 0 && obj?.completed?.length <= 0 && (
           <div className="flex flex-col items-center justify-center h-full">
